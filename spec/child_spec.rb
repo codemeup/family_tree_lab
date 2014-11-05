@@ -21,7 +21,7 @@ describe Child do
       expect(@child.sex).to eq("female")
     end
     it "is assigned a favColor" do
-
+      expect(Child.colors.one?{|color| color == @child.favColor}).to be true
     end
     it "should increment the children variable by 1 when created" do
 

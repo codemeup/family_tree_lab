@@ -26,6 +26,9 @@ describe Grandparent do
     it "should have a way to access the family variable" do
       expect(Grandparent.family).to be_an(Array)
     end
+    it "should have a way to access the grandchildren" do
+      expect(Grandparent.grandchildren).to be_an(Array)
+    end
   end
 
   describe "Adding to the family" do
@@ -43,8 +46,9 @@ describe Grandparent do
     # Loop over the array returned by Grandparent.showFamily and see
     # if the number of instance variables at each index is >= 3
     it "Should have at least three instance variables at every index of the array" do
-
-
+      Grandparent.showFamily.each do |instance|
+        expect(instance.instance_variables.length).to be >= 3
+      end
     end
   end
 end
